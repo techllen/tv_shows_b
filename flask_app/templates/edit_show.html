@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Shows</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/style.css')}}">
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Edit {{show_to_display.title}}</h1>
+            <div class="heading-link">
+                <a href="/dashboard"><button>TV Shows</button></a>
+                <a href="/logout"><button>Logout</button></a>
+            </div>
+        </div>
+        <form action="/update" method="POST" class="show-edit-form">
+            {% with messages = get_flashed_messages(category_filter=["input-error"]) %}    
+                {% if messages %}                            
+                    {% for message in messages %}            
+                        <p>{{message}}</p> 
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <div >
+                <label>Title:</label><br>
+                <input type="text" name="title" value="{{show_to_display.title}}" />
+            </div>
+            <div>
+                <label>Network:</label><br>
+                <input type="text" name="network" value="{{show_to_display.network}}" >
+            </div>
+            <div>
+                <label>Release Date:</label><br>
+                <input type="date" name="release_date" value="{{show_to_display.release_date}}" >
+            </div>
+            <div>
+                <label>Description:</label><br>
+                <textarea name="description" id="" cols="30" rows="10" value="{{show_to_display.description}}" class="descr" >{{show_to_display.description}}</textarea>
+            </div>
+            <input type="hidden" name="show_id" value="{{show_to_display.id}}">
+            <button type="submit" class="add-button">Update</button>
+        </form>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='/js/scripts.js') }}"></script>
+</body>
+</html>

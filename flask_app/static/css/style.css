@@ -1,0 +1,187 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+/* Resets */
+*{
+    margin: 0px;
+    padding: 0px;
+    font-size: 100%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #B2E1FC;
+}
+
+h1{
+    font-size: 200%;
+    padding: 15px;
+}
+
+.container{
+    width: 1000px;
+    display: flex;
+    margin: 50px auto;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-show{
+    width: 1000px;
+    display: flex;
+    margin: 50px auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-login{
+    width: 1000px;
+    display: flex;
+    margin: 50px auto;
+    justify-content: space-around;
+}
+
+form{
+    background-color: #250D49;
+    width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.login-form-in,.register-form-in{
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+}
+
+.login-form h1{
+    color:#42BE9B;
+    font-size: 200%;
+    margin-bottom: 30px;
+}
+
+.register-form h1{
+    color:#3832B9;
+    font-size: 200%;
+    margin-bottom: 30px;
+}
+
+input{
+    padding: 7px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+button{
+    position: relative;
+    left: 0px;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 7px;
+    width: 100px;
+    background-color:#FB8B4A ;
+    border: 0px;
+    box-shadow: 3px 3px #000000;
+}
+
+.register-button{
+    padding: 7px;
+    width: 80px;
+    background-color:#3832B9 ;
+    border: 0px;
+    color:#ffffff;
+    font-weight: bolder;
+}
+
+.login-button{
+    padding: 7px;
+    width: 80px;
+    background-color:#42BE9B ;
+    border: 0px;
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+.add-button{
+    padding: 7px;
+    width: 80px;
+    background-color:#42BE9B ;
+    border: 0px;
+}
+
+.heading{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0px;
+}
+
+.heading-link{
+    position: relative;
+    top: 5px;
+}
+
+.heading-link a, .heading-link-show a{
+    margin-right: 20px;
+}
+
+.heading-link-show{
+    position: relative;
+    left:300px;
+    margin-right: 20px;
+}
+
+.show_details{
+    width: 500px;
+    border: 3px solid #000000;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.show-edit-form{
+    margin-left: 10px;
+}
+
+table{
+    margin-left: 16px;
+}
+
+tr {
+    text-align: center;
+  }
+
+.posted-by{
+    margin-top: 30px;
+}
+
+.show-description{
+    font-size: 130%;
+}
+
+#add-show-btn{
+    margin-left:750px;
+    width: 200px;
+}
+
+/* .year{
+    width: 213px;
+} */
+
+.error-message{
+    font-weight: bolder;
+    color: #EE1B25;
+}
+
+
+.show-descr-heading{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Shows</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/style.css')}}">
+</head>
+<body>
+    <div class="container-login">
+        <form action="/register" method="POST">
+            {% with messages = get_flashed_messages(category_filter=["register-error"]) %}    
+                {% if messages %}                            
+                    {% for message in messages %}            
+                        <p class="error-message"><em>{{message}}</em></p>  
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <h1>Register</h1>
+            <div>
+                <label>First name:</label><br>
+                <input type="text" name="first_name">
+            </div>
+            <div>
+                <label>Last name:</label><br>
+                <input type="text" name="last_name">
+            </div>
+            <div>
+                <label>Email:</label><br>
+                <input type="email" name="email">
+            </div>
+            <div>
+                <label>Password:</label><br>
+                <input type="password" name="password">
+            </div>
+            <div>
+                <label>Confirm password:</label><br>
+                <input type="password" name="confirmed_password">
+            </div>
+            <button type="submit" class="register-button">Register</button>
+        </form>
+        <form action="/login" method="POST">
+            {% with messages = get_flashed_messages(category_filter=["login-error"]) %} 
+                {% if messages %}                           
+                    {% for message in messages %}            
+                    <p class="error-message"><em>{{message}}</em></p> 
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <h1>Login</h1>
+            <div>
+                <label>Email:</label><br>
+                <input type="email" name="email">
+            </div>
+            <div>
+                <label>Password:</label><br>
+                <input type="password" name="password">
+            </div>
+            <button type="submit" class="login-button">Login</button>
+        </form>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='/js/scripts.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Shows</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/style.css')}}">
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Add a new Show</h1>
+            <div class="heading-link">
+                <a href="/dashboard"><button>TV Shows</button></a>
+                <a href="/logout"><button>Logout</button></a>
+            </div>
+        </div>
+        <form action="/save_show" method="POST" class="show-edit-form">
+            {% with messages = get_flashed_messages(category_filter=["input-error","banner"]) %}    
+                {% if messages %}                            
+                    {% for message in messages %}            
+                        <p class="error-message"><em>{{message}}</em></p> 
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <div >
+                <label>Title:</label><br>
+                <input type="text" name="title" />
+            </div>
+            <div>
+                <label>Network:</label><br>
+                <input type="text" name="network" >
+            </div>
+            <div>
+                <label>Release Date:</label><br>
+                <input type="date" name="release_date" >
+            </div>
+            <div>
+                <label>Description:</label><br>
+                <textarea name="description" id="" cols="30" rows="10" class="descr"></textarea>
+            </div>
+            <button type="submit" class="btn add-button">Add</button>
+        </form>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='/js/scripts.js') }}"></script>
+</body>
+</html>

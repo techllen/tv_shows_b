@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Shows</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/style.css')}}">
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Howdy, {{user_to_display.first_name}}!!!</h1>
+            <class class="heading-link">
+                <a href="/logout"><button>Logout</button></a>
+            </class>
+        </div>
+        <h1>All TV Shows</h1>
+        <table class="table table-striped table-hover">
+            <tr>
+              <th>Title</th>
+              <th>Network</th>
+              <th>Release Date</th>
+              <th>Actions</th>
+            </tr>
+            {% for show in shows_to_display %}
+            <tr>
+                {%if user_to_display.id == show.user.id%}
+                    <td>{{show.title}}</td>
+                    <td>{{show.network}}</td>
+                    <td>{{show.release_date}}</td>
+                    <td><a <a href="/show/{{show.id}}">Show</a> | <a href="/edit/{{show.id}}">Edit</a> | <a href="/shows/delete/{{show.id}}">Delete</a> </td>
+                {%else%}
+                    <td>{{show.title}}</td>
+                    <td>{{show.network}}</td>
+                    <td>{{show.release_date}}</td>
+                    <td><a <a href="/show/{{show.id}}">Show</a> | <a href="/like/{{show.id}}">Like</a> | <a href="/unlike/{{show.id}}">Un_like</a> </td>
+                {%endif%}
+              </tr>
+            {%endfor%}
+        </table>
+        <a href="/new"><Button id="add-show-btn">Add A New Show</Button></a>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='/js/scripts.js') }}"></script>
+</body>
+</html>

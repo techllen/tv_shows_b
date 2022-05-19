@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Shows</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/style.css')}}">
+</head>
+<body>
+    <div class="container-show">
+        <div class="heading">
+            <div class="heading-link-show">
+                <a href="/dashboard"><button>TV Shows</button></a>
+                <a href="/logout"><button>Logout</button></a>
+            </div>
+        </div>
+        <div class="show_details">
+            <div class="show-description">
+                <div class="show-descr-heading">
+                    <p><strong>{{show_to_display.title}}</strong></p><p><strong> liked by: {{count_to_display}}</strong></p>
+                </div>
+                <p>Network: {{show_to_display.network}}</p>
+                <p>Release Date: {{show_to_display.release_date}}</p>
+                <p>Description:</p>
+                <p>{{show_to_display.description}}</p>
+                <p class="posted-by" >Posted By: {{show_to_display.user.first_name}} {{show_to_display.user.last_name}}</p>
+        </div>
+        
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='/js/scripts.js') }}"></script>
+</body>
+</html>
